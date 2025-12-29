@@ -157,3 +157,13 @@ git add .
 git commit
 # Then re-run /merge_worktree to complete cleanup
 ```
+
+## Relationship to Other Commands
+
+Recommended worktree workflow:
+1. `/implement_in_worktree` - Create worktree and start implementation
+2. `/implement_plan` - Execute the plan (runs in new terminal)
+3. `/commit` - Create commits for changes
+4. `/merge_worktree` - Merge to main and clean up worktree
+
+This command completes the worktree lifecycle by merging changes back to main and cleaning up the isolated development environment.

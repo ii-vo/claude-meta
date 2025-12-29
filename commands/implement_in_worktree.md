@@ -38,9 +38,8 @@ description: Create git worktree and launch Claude in a new terminal to implemen
    ✓ Worktree created: ~/worktrees/$BRANCH_NAME
    ✓ New terminal opened with Claude implementing the plan
 
-   When done, clean up:
-     git worktree remove ~/worktrees/$BRANCH_NAME
-     git branch -D $BRANCH_NAME
+   When done, use /merge_worktree to merge and clean up:
+     /merge_worktree $BRANCH_NAME
    ```
 
 ## Configuration
@@ -78,7 +77,14 @@ Output to user:
 ✓ Worktree created: ~/worktrees/workflow-redesign
 ✓ New terminal opened with Claude implementing the plan
 
-When done, clean up:
-  git worktree remove ~/worktrees/workflow-redesign
-  git branch -D workflow-redesign
+When done, use /merge_worktree to merge and clean up:
+  /merge_worktree workflow-redesign
 ```
+
+## Relationship to Other Commands
+
+Recommended worktree workflow:
+1. `/implement_in_worktree` - Create worktree and start implementation
+2. `/implement_plan` - Execute the plan (runs in new terminal)
+3. `/commit` - Create commits for changes
+4. `/merge_worktree` - Merge to main and clean up worktree
