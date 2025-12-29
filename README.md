@@ -25,8 +25,7 @@ Or install directly from the marketplace:
 |---------|-------------|
 | `/create_plan` | Create detailed implementation plans through interactive research |
 | `/create_plan_no_thoughts` | Create implementation plans (no notes directory) |
-| `/implement_plan` | Execute a plan with verification |
-| `/implement_in_worktree` | Create git worktree and implement plan in isolated branch |
+| `/implement_plan` | Execute a plan (creates worktree by default, use `--here` to stay in place) |
 | `/iterate_plan` | Update existing plans based on feedback |
 | `/validate_plan` | Verify implementation against plan success criteria |
 
@@ -41,6 +40,11 @@ Or install directly from the marketplace:
 - `/ship` - Full PR workflow: analyze, describe, create PR, merge, cleanup
 - `/ship --direct` - Direct merge to main, no PR
 - `/ship --pr-only` - Create PR with description, don't merge (for team review)
+
+**`/implement_plan` modes:**
+- `/implement_plan <plan>` - Creates worktree, opens new terminal (default)
+- `/implement_plan <plan> --here` - Implements in current directory
+- Auto-detects if already in worktree and implements directly
 
 ### Context & Handoff
 
@@ -65,26 +69,28 @@ Specialized sub-agents spawned by commands for parallel research:
 
 ## Typical Workflows
 
-### Feature Development
+### Feature Development (Recommended)
 
 ```
 /create_plan          → Design implementation approach
-/implement_plan       → Execute the plan
-/commit               → Commit changes
-/ship                 → Create PR, merge, cleanup
+/implement_plan       → Creates worktree + new terminal with Claude
+                        (your main terminal stays free)
+/commit               → Commit changes (in worktree terminal)
+/ship                 → Merge PR and cleanup worktree
 ```
 
-### Worktree Workflow (Isolated Development)
+This is the default workflow. `/implement_plan` automatically creates an isolated worktree environment so you can continue working in your main terminal while Claude implements.
+
+### Quick Implementation (Same Directory)
 
 ```
-/create_plan                    → Design implementation approach
-/implement_in_worktree          → Create worktree + new terminal with Claude
-                                  (automatically runs /implement_plan)
-/commit                         → Commit changes (in worktree terminal)
-/ship                           → Merge PR and cleanup worktree
+/create_plan
+/implement_plan --here    → Implement in current directory
+/commit
+/ship
 ```
 
-This workflow opens a new terminal in `~/worktrees/<branch>` with Claude already running `/implement_plan`. Perfect for keeping your main terminal free while Claude works.
+Use `--here` when you want to stay in the same terminal/directory.
 
 ### Quick Fix
 
