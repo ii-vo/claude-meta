@@ -26,6 +26,7 @@ Or install directly from the marketplace:
 | `/create_plan` | Create detailed implementation plans through interactive research |
 | `/create_plan_no_thoughts` | Create implementation plans (no notes directory) |
 | `/implement_plan` | Execute a plan with verification |
+| `/implement_in_worktree` | Create git worktree and implement plan in isolated branch |
 | `/iterate_plan` | Update existing plans based on feedback |
 | `/validate_plan` | Verify implementation against plan success criteria |
 
@@ -72,6 +73,18 @@ Specialized sub-agents spawned by commands for parallel research:
 /commit               → Commit changes
 /ship                 → Create PR, merge, cleanup
 ```
+
+### Worktree Workflow (Isolated Development)
+
+```
+/create_plan                    → Design implementation approach
+/implement_in_worktree          → Create worktree + new terminal with Claude
+                                  (automatically runs /implement_plan)
+/commit                         → Commit changes (in worktree terminal)
+/ship                           → Merge PR and cleanup worktree
+```
+
+This workflow opens a new terminal in `~/worktrees/<branch>` with Claude already running `/implement_plan`. Perfect for keeping your main terminal free while Claude works.
 
 ### Quick Fix
 
