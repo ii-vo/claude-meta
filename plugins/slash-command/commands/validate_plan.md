@@ -1,5 +1,7 @@
 ---
 description: Validate implementation against plan, verify success criteria, identify issues
+argument-hint: [plan-path]
+allowed-tools: Bash, Read, Grep, Glob, Task
 ---
 
 # Validate Plan

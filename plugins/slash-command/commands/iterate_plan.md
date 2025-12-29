@@ -1,5 +1,6 @@
 ---
 description: Iterate on existing implementation plans with thorough research and updates
+argument-hint: <plan-path> [feedback]
 model: opus
 ---
 

@@ -1,5 +1,6 @@
 ---
 description: Create handoff document for transferring work to another session
+allowed-tools: Bash, Write, Read
 ---
 
 # Create Handoff

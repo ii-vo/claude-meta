@@ -1,18 +1,28 @@
 ---
 description: Create git commits for session changes with clear, atomic messages
+allowed-tools: Bash
 ---
 
 # Commit Changes
 
 You are tasked with creating git commits for the changes made during this session.
 
+## Current State
+
+```bash
+!git status --short
+```
+
+```bash
+!git diff --stat
+```
+
 ## Process:
 
 1. **Think about what changed:**
 
     - Review the conversation history and understand what was accomplished
-    - Run `git status` to see current changes
-    - Run `git diff` to understand the modifications
+    - Use the git status/diff output above to understand the modifications
     - Consider whether changes should be one commit or multiple logical commits
 
 2. **Plan your commit(s):**

@@ -1,5 +1,6 @@
 ---
 description: Document codebase as-is with notes directory for historical context
+argument-hint: [research question]
 model: opus
 ---
 

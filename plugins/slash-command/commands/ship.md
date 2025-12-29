@@ -1,6 +1,7 @@
 ---
 description: Ship code via PR (with full description) or direct merge, with automatic cleanup
 argument-hint: [--direct | --pr-only | --squash]
+allowed-tools: Bash, Read
 ---
 
 # Ship
