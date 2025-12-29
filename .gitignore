@@ -2,27 +2,10 @@
 .DS_Store
 *.swp
 
-# Settings backups
-settings.json.backup.*
+# IDE
+.idea/
+.vscode/
 
-# Ephemeral/cache data
-plugins/cache/
-plugins/marketplaces/
-session-env/
-todos/
-projects/
-debug/
-file-history/
-shell-snapshots/
-telemetry/
-statsig/
-ide/
-image-cache/
-*.lock
-stats-cache.json
-install-counts-cache.json
-history.jsonl
-
-# Project-specific (not part of the plugin)
-plans/
-hack/
+# Temporary
+*.tmp
+*.bak

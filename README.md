@@ -1,21 +1,20 @@
 # Claude Meta
 
-A collection of commands and agents for Claude Code that enhance planning, implementation, and shipping workflows.
+A marketplace of commands and agents for Claude Code that enhance planning, implementation, and shipping workflows.
 
 ## Installation
 
-Add to your Claude Code settings:
-
-```json
-{
-  "plugins": ["github:ii-vo/claude-meta"]
-}
-```
-
-Or clone directly to `~/.claude/`:
+Add the marketplace and install the plugin:
 
 ```bash
-git clone https://github.com/ii-vo/claude-meta.git ~/.claude
+/plugin marketplace add ii-vo/claude-meta
+/plugin install claude-meta:claude-meta
+```
+
+Or install directly from the marketplace:
+
+```bash
+/plugin install github:ii-vo/claude-meta
 ```
 
 ## Commands
@@ -104,11 +103,14 @@ Specialized sub-agents spawned by commands for parallel research:
 ## Structure
 
 ```
-~/.claude/
-├── commands/         # Slash commands (/command_name)
-├── agents/           # Sub-agent definitions
-├── scripts/          # Supporting shell scripts
-└── plugins/          # Installed plugins (gitignored)
+.claude-plugin/
+  marketplace.json     # Marketplace definition
+plugins/
+  claude-meta/         # Main plugin
+    .claude-plugin/
+      plugin.json      # Plugin metadata
+    commands/          # Slash commands
+    agents/            # Sub-agent definitions
 ```
 
 ## License

@@ -1,0 +1,9 @@
+{
+  "name": "claude-meta",
+  "description": "Planning, implementation, and shipping workflows for Claude Code",
+  "version": "1.0.0",
+  "author": {
+    "name": "ii-vo",
+    "email": "github@ii-vo.dev"
+  }
+}
