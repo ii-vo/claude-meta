@@ -1,5 +1,5 @@
 ---
-description: Implement technical plans from plans/ with verification (uses worktree by default for isolation)
+description: Implement technical plans from thoughts/plans/ with verification (uses worktree by default for isolation)
 argument-hint: [plan-path] [--here]
 ---
 
@@ -42,7 +42,7 @@ When given a plan path:
 - Create a todo list to track your progress
 - Start implementing if you understand what needs to be done
 
-If no plan path provided, look for recent plans in `plans/` and ask which one.
+If no plan path provided, look for recent plans in `thoughts/plans/` and ask which one.
 
 ### Implementation Philosophy
 
@@ -118,7 +118,7 @@ Use this mode when in the main repository without `--here` flag. This creates an
 
 1. **Get the required information:**
    - If a plan file path is provided as argument, use it
-   - Otherwise, look for recently created plans in `plans/` directory and ask which one
+   - Otherwise, look for recently created plans in `thoughts/plans/` directory and ask which one
    - Derive branch name from the plan filename (e.g., `2025-12-29-workflow-redesign.md` → `workflow-redesign`)
    - Convert plan path to absolute path
 
@@ -179,19 +179,19 @@ Example: `export CLAUDE_TERMINAL=warp`
 
 **Default (creates worktree):**
 ```
-/implement_plan plans/2025-12-29-auth-refactor.md
+/implement_plan thoughts/plans/2025-12-29-auth-refactor.md
 ```
 → Creates `~/worktrees/auth-refactor`, opens new terminal with Claude
 
 **Implement in current directory:**
 ```
-/implement_plan plans/2025-12-29-auth-refactor.md --here
+/implement_plan thoughts/plans/2025-12-29-auth-refactor.md --here
 ```
 → Implements directly in current directory
 
 **Already in worktree (auto-detected):**
 ```
-/implement_plan plans/2025-12-29-auth-refactor.md
+/implement_plan thoughts/plans/2025-12-29-auth-refactor.md
 ```
 → Detects worktree, implements directly (no new terminal)
 

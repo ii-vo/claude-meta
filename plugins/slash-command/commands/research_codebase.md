@@ -72,7 +72,7 @@ Then wait for the user's research query.
    - IMPORTANT: Wait for ALL sub-agent tasks to complete before proceeding
    - Compile all sub-agent results (both codebase and notes findings)
    - Prioritize live codebase findings as primary source of truth
-   - Use notes/ and research/ findings as supplementary historical context
+   - Use thoughts/notes/ and thoughts/research/ findings as supplementary historical context
    - Connect findings across different components
    - Include specific file paths and line numbers for reference
    - Verify all file paths are correct and accessible
@@ -80,13 +80,13 @@ Then wait for the user's research query.
    - Answer the user's specific questions with concrete evidence
 
 5. **Gather metadata for the research document:**
-   - Filename: `research/YYYY-MM-DD-description.md`
+   - Filename: `thoughts/research/YYYY-MM-DD-description.md`
      - Format: `YYYY-MM-DD-description.md` where:
        - YYYY-MM-DD is today's date
        - description is a brief kebab-case description of the research topic
      - Examples:
-       - `research/2025-01-08-authentication-flow.md`
-       - `research/2025-01-08-api-patterns.md`
+       - `thoughts/research/2025-01-08-authentication-flow.md`
+       - `thoughts/research/2025-01-08-api-patterns.md`
 
 6. **Generate research document:**
    - Use the metadata gathered in step 4
@@ -138,11 +138,11 @@ Then wait for the user's research query.
 
      ## Historical Context
      [Relevant insights from notes and previous research]
-     - `notes/decision.md` - Historical decision about X
-     - `research/previous-topic.md` - Past exploration of Y
+     - `thoughts/notes/decision.md` - Historical decision about X
+     - `thoughts/research/previous-topic.md` - Past exploration of Y
 
      ## Related Research
-     [Links to other research documents in research/]
+     [Links to other research documents in thoughts/research/]
 
      ## Open Questions
      [Any areas that need further investigation]
@@ -171,7 +171,7 @@ Then wait for the user's research query.
 ## Important notes:
 - Always use parallel Task agents to maximize efficiency and minimize context usage
 - Always run fresh codebase research - never rely solely on existing research documents
-- The notes/ and research/ directories provide historical context to supplement live findings
+- The thoughts/notes/ and thoughts/research/ directories provide historical context to supplement live findings
 - Focus on finding concrete file paths and line numbers for developer reference
 - Research documents should be self-contained with all necessary context
 - Each sub-agent prompt should be specific and focused on read-only documentation operations
@@ -180,7 +180,7 @@ Then wait for the user's research query.
 - Link to GitHub when possible for permanent references
 - Keep the main agent focused on synthesis, not deep file reading
 - Have sub-agents document examples and usage patterns as they exist
-- Explore notes/, research/, and related documentation directories
+- Explore thoughts/notes/, thoughts/research/, and related documentation directories
 - **CRITICAL**: You and all sub-agents are documentarians, not evaluators
 - **REMEMBER**: Document what IS, not what SHOULD BE
 - **NO RECOMMENDATIONS**: Only describe the current state of the codebase

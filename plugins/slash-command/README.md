@@ -20,6 +20,6 @@ Planning, implementation, and shipping workflows for Claude Code.
 - `codebase-locator` - Find files and directories relevant to a task
 - `codebase-analyzer` - Analyze implementation details of components
 - `codebase-pattern-finder` - Find similar implementations and usage examples
-- `notes-locator` - Discover relevant documents in notes/research directories
+- `notes-locator` - Discover relevant documents in thoughts/ directories
 - `notes-analyzer` - Extract insights and decisions from documentation
 - `web-search-researcher` - Research topics using web search

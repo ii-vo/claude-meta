@@ -156,13 +156,13 @@ Once aligned on approach:
 
 After structure approval:
 
-1. **Write the plan** to `plans/YYYY-MM-DD-description.md`
+1. **Write the plan** to `thoughts/plans/YYYY-MM-DD-description.md`
    - Format: `YYYY-MM-DD-description.md` where:
      - YYYY-MM-DD is today's date
      - description is a brief kebab-case description
    - Examples:
-     - `plans/2025-01-08-auth-refactor.md`
-     - `plans/2025-01-08-improve-error-handling.md`
+     - `thoughts/plans/2025-01-08-auth-refactor.md`
+     - `thoughts/plans/2025-01-08-improve-error-handling.md`
 2. **Use this template structure**:
 
 ````markdown
@@ -257,7 +257,7 @@ After structure approval:
 
 ## References
 
-- Related research: `research/[relevant].md`
+- Related research: `thoughts/research/[relevant].md`
 - Similar implementation: `[file:line]`
 ````
 
@@ -266,7 +266,7 @@ After structure approval:
 1. **Present the draft plan location**:
    ```
    I've created the initial implementation plan at:
-   `plans/YYYY-MM-DD-description.md`
+   `thoughts/plans/YYYY-MM-DD-description.md`
 
    Please review it and let me know:
    - Are the phases properly scoped?

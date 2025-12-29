@@ -14,18 +14,18 @@ When this command is invoked:
 1. **If the path to a handoff document was provided**:
    - If a handoff document path was provided as a parameter, skip the default message
    - Immediately read the handoff document FULLY
-   - Immediately read any research or plan documents that it links to under `plans/` or `research/`. do NOT use a sub-agent to read these critical files.
+   - Immediately read any research or plan documents that it links to under `thoughts/plans/` or `thoughts/research/`. do NOT use a sub-agent to read these critical files.
    - Begin the analysis process by ingesting relevant context from the handoff document, reading additional files it mentions
    - Then propose a course of action to the user and confirm, or ask for clarification on direction.
 
 2. **If searching for a handoff by name**:
-   - List the handoffs directory: `ls handoffs/`
+   - List the handoffs directory: `ls thoughts/handoffs/`
    - Find files matching the search term
    - **If there are zero matches**: tell the user: "I'm sorry, I can't find that handoff document. Can you please provide a path to it?"
    - **If there is only one match**: proceed with that handoff
    - **If there are multiple matches**: using the date and time specified in the file name (format `YYYY-MM-DD_HH-MM-SS`), proceed with the _most recent_ handoff document.
    - Immediately read the handoff document FULLY
-   - Immediately read any research or plan documents that it links to under `plans/` or `research/`; do NOT use a sub-agent to read these critical files.
+   - Immediately read any research or plan documents that it links to under `thoughts/plans/` or `thoughts/research/`; do NOT use a sub-agent to read these critical files.
    - Begin the analysis process by ingesting relevant context from the handoff document, reading additional files it mentions
    - Then propose a course of action to the user and confirm, or ask for clarification on direction.
 
@@ -35,7 +35,7 @@ I'll help you resume work from a handoff document. Let me find the available han
 
 Which handoff would you like to resume from?
 
-Tip: You can invoke this command directly with a handoff path: `/resume_handoff handoffs/YYYY-MM-DD_HH-MM-SS_description.md`
+Tip: You can invoke this command directly with a handoff path: `/resume_handoff thoughts/handoffs/YYYY-MM-DD_HH-MM-SS_description.md`
 ```
 
 Then wait for the user's input.

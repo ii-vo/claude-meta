@@ -102,7 +102,7 @@ Thoroughly analyze:
 1. **Check for PR template:**
    ```bash
    # Look for template
-   cat .github/pull_request_template.md 2>/dev/null || cat prs/pr_template.md 2>/dev/null
+   cat .github/pull_request_template.md 2>/dev/null || cat thoughts/prs/pr_template.md 2>/dev/null
    ```
 
 2. **Check if PR exists:**
@@ -124,14 +124,14 @@ Thoroughly analyze:
 
 4. **Save description locally:**
    ```bash
-   mkdir -p prs
-   # Write to prs/{number}_description.md
+   mkdir -p thoughts/prs
+   # Write to thoughts/prs/{number}_description.md
    ```
 
 **If `--pr-only` mode, STOP here and inform user:**
 ```
 PR created/updated: [URL]
-Description saved to: prs/{number}_description.md
+Description saved to: thoughts/prs/{number}_description.md
 
 When ready to merge, run:
   /ship                    (to merge with cleanup)
