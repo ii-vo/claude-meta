@@ -1,5 +1,6 @@
 ---
 description: Ship code via PR (with full description) or direct merge, with automatic cleanup
+argument-hint: [--direct | --pr-only | --squash]
 ---
 
 # Ship
@@ -236,12 +237,12 @@ The command automatically detects:
 ## Relationship to Other Commands
 
 Recommended workflow:
-1. `/implement_in_worktree` - Create isolated environment
-2. `/implement_plan` - Execute the plan
-3. `/commit` - Create commits
-4. `/ship` - Ship to main and cleanup
+1. `/create_plan` - Design implementation approach
+2. `/implement_plan` - Execute the plan (creates worktree by default)
+3. `/commit` - Create commits for changes
+4. `/ship` - Ship to main and cleanup worktree
 
-This command replaces the separate `/describe_pr` + `/merge_worktree` workflow with a single unified command.
+This command handles both worktree and regular branch workflows automatically.
 
 ## Error Handling
 
