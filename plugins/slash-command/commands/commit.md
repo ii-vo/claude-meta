@@ -38,7 +38,7 @@ You are tasked with creating git commits for the changes made during this sessio
     - Never commit dummy files, test scripts, or other files which you created or which appear to have been created but which were not part of your changes or directly caused by them (e.g. generated code)
     - **ALWAYS commit** `.claude/sessions/` directory - session data must always be committed
     - **DO commit** `.claude/` directory contents including sessions, commands, hooks, skills, and settings
-    - **DO commit** `plans/`, `handoffs/`, `research/`, and `prs/` directories
+    - **DO commit** `thoughts/` directory (plans/, handoffs/, research/, prs/)
     - **DO commit** `public/` assets (logos, icons, images)
     - **DO NOT commit** `.claude/settings.json.backup.*` temporary backup files
     - Create commits with your planned messages until all of your changes are committed with `git commit -m`
