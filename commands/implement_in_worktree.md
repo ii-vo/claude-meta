@@ -38,8 +38,9 @@ description: Create git worktree and launch Claude in a new terminal to implemen
    ✓ Worktree created: ~/worktrees/$BRANCH_NAME
    ✓ New terminal opened with Claude implementing the plan
 
-   When done, use /merge_worktree to merge and clean up:
-     /merge_worktree $BRANCH_NAME
+   When done, ship your changes:
+     /ship              (full PR with description)
+     /ship --direct     (quick merge, no PR)
    ```
 
 ## Configuration
@@ -77,8 +78,9 @@ Output to user:
 ✓ Worktree created: ~/worktrees/workflow-redesign
 ✓ New terminal opened with Claude implementing the plan
 
-When done, use /merge_worktree to merge and clean up:
-  /merge_worktree workflow-redesign
+When done, ship your changes:
+  /ship              (full PR with description)
+  /ship --direct     (quick merge, no PR)
 ```
 
 ## Relationship to Other Commands
@@ -87,4 +89,4 @@ Recommended worktree workflow:
 1. `/implement_in_worktree` - Create worktree and start implementation
 2. `/implement_plan` - Execute the plan (runs in new terminal)
 3. `/commit` - Create commits for changes
-4. `/merge_worktree` - Merge to main and clean up worktree
+4. `/ship` - Ship to main and clean up (with PR or direct)

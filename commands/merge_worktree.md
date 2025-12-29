@@ -1,6 +1,12 @@
 ---
-description: Merge worktree branch to main and clean up the worktree
+description: "[DEPRECATED - Use /ship instead] Merge worktree branch to main and clean up"
 ---
+
+> **DEPRECATED**: This command has been replaced by `/ship` which provides a unified workflow for both PR-based and direct merges, with automatic worktree detection.
+>
+> Use instead:
+> - `/ship` - Full PR workflow with description
+> - `/ship --direct` - Quick direct merge
 
 ## Process
 

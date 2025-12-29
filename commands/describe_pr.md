@@ -1,6 +1,12 @@
 ---
-description: Generate comprehensive PR descriptions following repository templates
+description: "[DEPRECATED - Use /ship instead] Generate comprehensive PR descriptions"
 ---
+
+> **DEPRECATED**: This command has been integrated into `/ship` which combines PR description generation with merge and cleanup.
+>
+> Use instead:
+> - `/ship` - Full PR workflow (describes, creates PR, merges, cleans up)
+> - `/ship --pr-only` - Create PR with description but don't merge (for team review)
 
 # Generate PR Description
 
