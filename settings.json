@@ -1,0 +1,7 @@
+{
+  "model": "opus",
+  "alwaysThinkingEnabled": true,
+  "enabledPlugins": {
+    "vercel@claude-plugins-official": true
+  }
+}
