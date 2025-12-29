@@ -16,6 +16,8 @@ Ship your branch to main with automatic cleanup. Works with both worktrees and r
 | **Direct** | `/ship --direct` | Merge directly to main, no PR |
 | **PR Only** | `/ship --pr-only` | Create PR with description, don't merge (for team review) |
 
+**Note:** Protected branches (`main`, `staging`, `development`) automatically use PR Only mode.
+
 ## Process
 
 ### Step 1: Detect Context
@@ -59,11 +61,21 @@ If uncommitted changes exist, ask user:
 
 ### Step 2: Determine Mode
 
+```bash
+# Protected branches - these use --pr-only by default
+PROTECTED_BRANCHES="main staging development"
+IS_PROTECTED=false
+if echo "$PROTECTED_BRANCHES" | grep -qw "$BRANCH"; then
+    IS_PROTECTED=true
+fi
+```
+
 **If `--direct` flag:**
 - Skip to Step 5 (Direct Merge)
 
-**If `--pr-only` flag:**
+**If `--pr-only` flag OR branch is protected:**
 - Do Steps 3-4, then STOP (don't merge or cleanup)
+- For protected branches, inform user: "Protected branch detected - using --pr-only mode"
 
 **Default (full PR workflow):**
 - If branch not pushed: push it first
@@ -130,8 +142,15 @@ When ready to merge, run:
 
 **For PR workflow (default):**
 ```bash
+# Protected branches - never delete these
+PROTECTED_BRANCHES="main staging development"
+
 # Merge via GitHub (runs CI, proper merge commit)
-gh pr merge $BRANCH --merge --delete-branch
+if echo "$PROTECTED_BRANCHES" | grep -qw "$BRANCH"; then
+    gh pr merge $BRANCH --merge
+else
+    gh pr merge $BRANCH --merge --delete-branch
+fi
 ```
 
 **For direct workflow (`--direct`):**
@@ -163,11 +182,18 @@ git worktree remove $WORKTREE_PATH --force 2>/dev/null || {
 
 **Delete branch (if not already deleted by PR merge):**
 ```bash
-# Local
-git branch -D $BRANCH 2>/dev/null || true
+# Protected branches - never delete these
+PROTECTED_BRANCHES="main staging development"
 
-# Remote
-git push origin --delete $BRANCH 2>/dev/null || true
+if echo "$PROTECTED_BRANCHES" | grep -qw "$BRANCH"; then
+    echo "Skipping deletion of protected branch: $BRANCH"
+else
+    # Local
+    git branch -D $BRANCH 2>/dev/null || true
+
+    # Remote
+    git push origin --delete $BRANCH 2>/dev/null || true
+fi
 ```
 
 **Prune:**
@@ -196,18 +222,24 @@ git fetch --prune
 
 The command automatically detects:
 
-1. **Worktree vs Regular Branch:**
+1. **Protected Branches:**
+   - `main`, `staging`, `development` are protected
+   - Protected branches automatically use `--pr-only` mode (no auto-merge, no deletion)
+   - This ensures these long-lived branches go through proper review
+
+2. **Worktree vs Regular Branch:**
    - Compare current directory against `git worktree list`
    - If current dir is in worktree list (not first entry) → it's a worktree
 
-2. **Can use PR workflow:**
+3. **Can use PR workflow:**
    - Branch must be pushed to remote
    - `gh` CLI must be available
    - If not → suggest `--direct` or push first
 
-3. **Cleanup strategy:**
+4. **Cleanup strategy:**
    - Worktree → remove worktree directory + delete branch
    - Regular branch → just delete branch
+   - Protected branches → never deleted
 
 ## Examples
 
@@ -228,6 +260,12 @@ The command automatically detects:
 /ship --pr-only
 ```
 → Creates PR with full description, stops for review
+
+**Ship from protected branch (e.g., development → main):**
+```
+/ship
+```
+→ Auto-detects protected branch, creates PR, stops for review (no auto-merge)
 
 **Ship from main repo (not in worktree):**
 ```
