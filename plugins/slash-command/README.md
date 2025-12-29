@@ -1,4 +1,4 @@
-# Claude Meta Plugin
+# Slash Command Plugin
 
 Planning, implementation, and shipping workflows for Claude Code.
 

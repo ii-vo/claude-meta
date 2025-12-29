@@ -1,5 +1,5 @@
 {
-  "name": "claude-meta",
+  "name": "slash-command",
   "description": "Planning, implementation, and shipping workflows for Claude Code",
   "version": "1.0.0",
   "author": {

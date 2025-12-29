@@ -8,14 +8,14 @@
   },
   "plugins": [
     {
-      "name": "claude-meta",
+      "name": "slash-command",
       "description": "Planning, implementation, and shipping workflows for Claude Code. Includes /create_plan, /implement_plan, /ship, /commit, /create_handoff, and research agents.",
       "version": "1.0.0",
       "author": {
         "name": "ii-vo",
         "email": "github@ii-vo.dev"
       },
-      "source": "./plugins/claude-meta",
+      "source": "./plugins/slash-command",
       "category": "productivity",
       "homepage": "https://github.com/ii-vo/claude-meta"
     }

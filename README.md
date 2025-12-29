@@ -8,7 +8,7 @@ Add the marketplace and install the plugin:
 
 ```bash
 /plugin marketplace add ii-vo/claude-meta
-/plugin install claude-meta:claude-meta
+/plugin install claude-meta:slash-command
 ```
 
 Or install directly from the marketplace:
@@ -106,7 +106,7 @@ Specialized sub-agents spawned by commands for parallel research:
 .claude-plugin/
   marketplace.json     # Marketplace definition
 plugins/
-  claude-meta/         # Main plugin
+  slash-command/       # Main plugin
     .claude-plugin/
       plugin.json      # Plugin metadata
     commands/          # Slash commands
