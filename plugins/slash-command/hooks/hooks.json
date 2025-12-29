@@ -1,0 +1,17 @@
+{
+  "description": "Branch protection - prevents deletion of main, staging, development branches",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python3 ${CLAUDE_PLUGIN_ROOT}/hooks/branch-protection.py",
+            "timeout": 30
+          }
+        ]
+      }
+    ]
+  }
+}
