@@ -17,7 +17,12 @@ shell-snapshots/
 telemetry/
 statsig/
 ide/
+image-cache/
 *.lock
 stats-cache.json
 install-counts-cache.json
 history.jsonl
+
+# Project-specific (not part of the plugin)
+plans/
+hack/
